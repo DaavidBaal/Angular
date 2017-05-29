@@ -1,5 +1,5 @@
 {
-  "name": "angular",
+  "name": "papapapapa",
   "version": "1.0.0",
   "description": "Ejercicios de Angular JS",
   "main": "index.js",
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/DaavidBaal/Angular#readme",
   "dependencies": {
+    "angular": "^1.6.4",
     "angularjs": "0.0.1"
   }
 }
