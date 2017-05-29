@@ -1,17 +1,4 @@
 
-# Created by https://www.gitignore.io/api/monodevelop
-
-### MonoDevelop ###
-#User Specific
-*.userprefs
-*.usertasks
-
-#Mono Project Files
-*.pidb
-*.resources
-test-results/
-
-# End of https://www.gitignore.io/api/monodevelop
 
 # Created by https://www.gitignore.io/api/node
 
