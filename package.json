@@ -21,6 +21,8 @@
   "homepage": "https://github.com/DaavidBaal/Angular#readme",
   "dependencies": {
     "angular": "^1.6.4",
-    "angularjs": "0.0.1"
+    "angularjs": "0.0.1",
+    "boostrap": "^1.0.0",
+    "bootstrap": "^3.3.7"
   }
 }
