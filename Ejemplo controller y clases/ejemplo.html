@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es"
+  <head>
+	<meta name="keywords" content="web, learning, html5, css3, angularJS">
+	<meta name="author" content="David">
+	<meta name="description" content="Ejercicios de Angular">
+	<meta name="generator" content="Visual Studio Code">
+	<meta charset="UTF-8">
+	<title>Ejemplo Angular</title>
+	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/ejemplo.css">
+	<link rel="icon" href="fav_icon.png">
+	<script src="../node_modules/angular/angular.js"></script>
+</head>
+
+<body ng-app ng-init="sCurso = 'Curso Angular'; sNombre:'Pepe'' ">
+	<header>
+		<h1>Acumulador</h1>
+	</header>
+	<article>
+		<form name="formulario">
+			<label for="fNombre" id="lblNombre">Control de operación</label>
+			<!--Asociamos el input a una variable Modelo-->
+			<input type="text" id="fNombre" ng-model="sNombre">
+			<label></label>
+			<!--Asociamos una operación con el evento click-->
+			<input type="button" id="btnsuma" value="Sumar" ng-click="sNombre=''">
+            <input type="button" id="btnresta" value="Restar" ng-click="sNombre=''">
+		</form>
+
+		<!--Presentamos mediante expresiones los valores de las variables del scope-->
+		<p>Hola <span id="nombre" class="destacado">{{sNombre.toUpperCase()}}</span>.</p>
+		<p>Bienvenid@ al curso de <strong id="curso" class="destacado">{{sCurso}}</strong>.</p>
+
+
+	</article>
+	<footer>
+		<p>Daavid Baal - Madrid 2017</p>
+	</footer>
+
+</body>
+
+</html>
