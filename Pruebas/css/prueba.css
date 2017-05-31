@@ -10,8 +10,12 @@
 
  h3 { text-align: center;}
 
+label {
+  	display:block;
+  	padding: 0.5em 1em;
+    }
 
- p { text-indent: 1em }
+
 
  p#Fecha { float: right; margin-right: 1em; }
 
@@ -23,7 +27,7 @@
   margin-bottom: 1em; 
   padding:1em }
 
-  legend { background: navy;  
+legend { background: navy;  
   color:white; 
   font-weight: bolder;
    border: 1px solid }
@@ -32,14 +36,26 @@
     float: left; 
      margin-right: 1em; 
      clear: left;
-     width: 44%  }
+     width: 40%  }
 .Derecha { 
       float: right;
-      width: 44% }
+      width: 40% }
+
+#fsCurso div.Izquierda {width: 60%}
+#fsCurso div.Derecha {width: 30%}
 
 
-  .button {  
-      margin-left: 1.5em; }
+
+ 
 
   .aficiones{ 
       margin-left: 2em;}
+      input {
+	float: left;
+}
+
+input#Correo {width: 45%;}
+input#Clave1, input#Clave2 {width: 35%;}
+fieldset#fsDatos input {width: 45%;}
+fieldset#fsFecha input {width: 40%;}
+fieldset#fsFecha input#anio {width: 55%;}
