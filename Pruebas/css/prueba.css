@@ -44,7 +44,9 @@ legend { background: navy;
 #fsCurso div.Izquierda {width: 60%}
 #fsCurso div.Derecha {width: 30%}
 
-
+.label{
+  float: left;
+  width: 40%;}
 
  
 

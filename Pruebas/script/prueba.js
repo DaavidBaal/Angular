@@ -13,7 +13,7 @@ else
 function actualizarColor(Elemento)
 {
 //vuelve a cambiar los colores del elemento de error a los originales
-with (window.document.forms.encuesta)
+with (window.document.forms.formulario)
 	{
 	Elemento.style.color='black';
 	Elemento.style.backgroundColor='white';	
@@ -92,7 +92,7 @@ class Formulario {
 
 		escribeDatos () {
 			//ocultar formulario
-			document.querySelector("#encuesta").className = "oculto";
+			document.querySelector("#formulario").className = "oculto";
 			//mostrar bloque div para el resultado
 			document.querySelector("#resultado").className = "bloque";
 			//incorporamos al parrafo cada línea del array		
@@ -105,3 +105,54 @@ class Formulario {
 	} // Fin de la clase formulario
 
 	
+
+        function main() {
+            var oFormulario = {
+                oEvento: {},
+                oDatos: {},
+                oLista: document.getElementById("listaDatos"), // referencia del párrafo donde escribir
+                recogeDatos: function (oE) {
+                    // manejadora del evento submit del formulario:
+                    // disparada sólo despues de la validación HTML5
+                    this.oEvento = oE || window.evnet;
+                    var inputs = document.querySelectorAll("input[type='text']")
+                    for (var i = 0; i < inputs.length; i++) {
+                        this.oDatos[inputs[i].name] = inputs[i].value;
+                    }
+                    this.oDatos.Comentarios = document.getElementById("Comentarios").value;
+                    this.escribeDatos();
+                }, //Fin del método recogeDatos
+
+                escribeDatos: function () {
+                    //anula el comportamiento por defecto de submit
+                    //incluida la validacion de los requireds
+                    //que ya se ha realizado para poder llegar aqui
+                    this.oEvento.preventDefault();
+                    //ocultar formulario
+                    document.getElementById("formulario").classList.add("oculto")
+                    //mostrar bloque div para el resultado
+                    document.getElementById("resultado").classList.remove("oculto");
+                    // limpiar el nodo <ul> donde se presentarán los datos
+                    this.oLista.innerHTML = "";
+                    //incorporamos a la lista cada elemento del objeto		
+                    for (var i in this.oDatos) {
+                        this.oLista.innerHTML += "<li>" + i + ": <strong>" +
+                            this.oDatos[i] + "</strong></li>";
+                    };
+                }, //Fin del método escribedatos	
+            }; // Fin del objeto oFormulario
+            
+            //document.getElementById("submit").addEventListener("click",
+            //   oFormulario.recogeDatos.bind(oFormulario));
+
+            // En lugar de responder al evento click del boton enviar
+            // Respondemos al evento submit del formulario, 
+            // desencadenado por el boton pero POSTERIOR
+            // al proceso de validación HTML
+
+            document.getElementById('formulario').addEventListener("submit",
+                oFormulario.recogeDatos.bind(oFormulario))
+
+
+                
+        } // Fin de la función main()
