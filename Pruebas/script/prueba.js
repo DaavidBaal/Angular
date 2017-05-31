@@ -15,7 +15,7 @@ function actualizarColor(Elemento)
 //vuelve a cambiar los colores del elemento de error a los originales
 with (window.document.forms.formulario)
 	{
-	Elemento.style.color='black';
+	Elemento.style.color='red';
 	Elemento.style.backgroundColor='white';	
 	}
 }
@@ -150,8 +150,7 @@ class Formulario {
             // desencadenado por el boton pero POSTERIOR
             // al proceso de validación HTML
 
-            document.getElementById('formulario').addEventListener("submit",
-                oFormulario.recogeDatos.bind(oFormulario))
+            document.getElementById('formulario').addEventListener("submit", oFormulario.recogeDatos.bind(oFormulario))
 
 
                 
